@@ -1,0 +1,23 @@
+package br.com.home.testdome.parte1;
+
+public class ReadWriteExecute {
+	
+    public static int symbolicToOctal(String permString) {
+    	
+    	String[] r = permString.split("");
+    	
+    	System.out.println("R : " + r);
+    	
+    	
+    	return 752;
+    	
+    	
+//        throw new UnsupportedOperationException("Waiting to be implemented.");
+    }
+
+    public static void main(String[] args) {
+        // Should write 752
+        System.out.println(ReadWriteExecute.symbolicToOctal("rwxr-x-w-"));
+    }
+
+}

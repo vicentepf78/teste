@@ -1,0 +1,35 @@
+import java.util.stream.Stream;
+
+public class MergeNames {
+    
+    public static String[] uniqueNames(String[] names1, String[] names2) {
+    	
+//    	 return  Stream.of(Arrays.asList(names1), Arrays.asList(names2))
+//							    			 .flatMap(x -> x.stream())
+//							    			 .collect(Collectors.toList()).toArray(new String[0]);
+    			 
+//    	 return resultado.toArray(new String[0]);
+    	
+//        throw new UnsupportedOperationException("Waiting to be implemented.");
+    	
+    	
+    	String[] resultado = (String[]) Stream.concat(Stream.of(names1), Stream.of(names2))
+    							.distinct().toArray(str -> new String[str]);
+    	
+    	
+    	return resultado;
+    	
+    	
+//    	 bks = (Book[]) Stream.concat(Stream.of(bk1), Stream.of(bk2)).distinct().toArray(b -> new Book[b]);
+//         for(Book b : bks) {
+//         	System.out.println(b.getName()+", "+ b.getPrice());
+//         }    	
+    	
+    }
+    
+    public static void main(String[] args) {
+        String[] names1 = new String[] {"Ava", "Emma", "Olivia"};
+        String[] names2 = new String[] {"Olivia", "Sophia", "Emma"};
+        System.out.println(String.join(", ", MergeNames.uniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+    }
+}

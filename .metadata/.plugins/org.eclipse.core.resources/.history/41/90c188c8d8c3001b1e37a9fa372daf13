@@ -1,0 +1,25 @@
+package br.com.home.estudos;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Solution07 {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int i = 1;
+		
+		while (sc.hasNext()) {
+			
+			if(sc.hasNext("\n")) {
+				System.out.println(i + " - " + sc.nextLine());
+				i++;
+			}else {
+				break;
+			}
+		}
+		sc.close();
+	}
+
+}

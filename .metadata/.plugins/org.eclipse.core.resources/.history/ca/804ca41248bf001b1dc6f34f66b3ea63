@@ -1,0 +1,62 @@
+package br.com.home.testdome.parte1;
+
+import java.util.Arrays;
+
+public class MovingTotal {
+    /**
+     * Adds/appends list of integers at the end of internal list.
+     */
+	private int[] lista;
+	
+    public void append(int[] list) {
+    	
+    	this.lista = Arrays.copyOf(list, list.length);
+    }
+
+    /**
+     * Returns boolean representing if any three consecutive integers in the
+     * internal list have given total.
+     */
+    public boolean contains(int total) {
+    	
+//    	{ 1, 2, 3, 4 }
+    	
+    	int copy[] = Arrays.copyOf(this.lista, 2);
+    	
+    	int result = Arrays.asList(copy).sum();
+    	
+    	if(result == total) {
+    		return true;
+    	}else {
+    		return false;
+    	}
+    	
+//    	int result = Arrays.stream(this.lista).sum();
+//    	
+//    	System.out.println("result: " + result);
+//    	
+//    	if(result == total) {
+//    		return true;
+//    	}else {
+//    		return false;
+//    	}
+    }
+
+    public static void main(String[] args) {
+        MovingTotal movingTotal = new MovingTotal();
+
+        movingTotal.append(new int[] { 1, 2, 3, 4 });
+
+        System.out.println(movingTotal.contains(6));
+        System.out.println(movingTotal.contains(9));
+        System.out.println(movingTotal.contains(12));
+        System.out.println(movingTotal.contains(7));
+
+        movingTotal.append(new int[] { 5 });
+
+        System.out.println(movingTotal.contains(6));
+        System.out.println(movingTotal.contains(9));        
+        System.out.println(movingTotal.contains(12));
+        System.out.println(movingTotal.contains(7));
+    }
+}

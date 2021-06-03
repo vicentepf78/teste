@@ -1,0 +1,16 @@
+package br.com.home.estudos;
+
+public class Solution08 {
+	
+	public static int B;
+	public static int H;
+
+	public static void main(String[] args) {
+		if (flag) {
+			int area = B * H;
+			System.out.print(area);
+		}
+
+	}
+
+}

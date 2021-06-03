@@ -1,0 +1,47 @@
+package br.com.home.lambda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Exemplo04 {
+	
+	public static void main(String[] args) {
+		System.out.println("Imprime todos os elementos da lista!");
+		//List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+		
+		int array01[] = {1, 2, 3, 4};
+		
+		List<Integer> intList = new ArrayList<Integer>(array01.length);
+		for (int i : array01)
+		{
+		    intList.add(i);
+		}
+		
+		intList.remove(array01.length-1);
+		
+		intList.forEach(n -> System.out.println(n));
+		
+		
+		
+		
+		
+//		Listagem 8. Imprimindo o quadrado dos elementos da lista
+//		list.forEach(n -> System.out.println(n * n));
+		
+//		Listagem 7. Imprimindo apenas os elementos pares de uma lista		
+//		list.forEach(n -> {
+//			if(n % 2 == 0) {
+//				System.out.println(n);
+//			}
+//		});
+		
+// Listagem 6. Imprimindo os elementos de uma lista com expressões lambda		
+//		list.forEach(n -> System.out.println(n));
+		
+// Listagem 5. Imprimindo os elementos de uma lista
+//		for(Integer n: list) {
+//		    System.out.println(n);
+//		}
+	}
+
+}

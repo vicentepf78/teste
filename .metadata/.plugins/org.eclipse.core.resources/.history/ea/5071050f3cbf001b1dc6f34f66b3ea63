@@ -1,0 +1,14 @@
+package br.com.home.estudos;
+
+public class MathUtils {
+    public static double average(int a, int b) {
+    	int soma = (a + b);
+    	System.out.println("soma : "  + soma);
+    	System.out.println(Double.sum(a, b)/2); ;
+        return soma/2;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(average(2,1));
+    }
+}

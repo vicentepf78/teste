@@ -1,0 +1,59 @@
+package br.com.home.testdome.parte1;
+
+public class ReadWriteExecute {
+
+	public static int symbolicToOctal(String permString) {
+    	
+    	String[] parte1 = permString.split("");
+    	String[] parte2 = permString.split("");
+    	String[] parte3 = permString.split("");
+    	
+    	
+    	int resultado1 = 0;
+    	int resultado2 = 0;
+    	int resultado3 = 0;
+    	
+    	
+    	
+    		
+    		System.out.println("Pos : " + r[i]);
+			
+		}
+
+	return 752;
+
+//        throw new UnsupportedOperationException("Waiting to be implemented.");
+	}
+
+	private int calculo(String[] r) {
+		
+		int resultado = 0;
+    	
+	for (int i = 0; i < r.length; i++) {
+	    		
+	    		if(r[i] == "r") {
+	    			resultado = resultado + 4; 
+	    		}else {
+	    			if(r[i] == "w") {
+	    				resultado = resultado + 2; 
+	    			} else {
+	    				if(r[i] == "x") {
+	    					resultado = resultado + 1;
+	    				} else {
+	    					if(r[i] == "-") {
+	        					resultado = resultado + 0;
+	    					}
+	    				}
+	    			}
+	    		}    	
+			}
+	
+	 return resultado;
+    }
+
+	public static void main(String[] args) {
+        // Should write 752
+        System.out.println(ReadWriteExecute.symbolicToOctal("rwxr-x-w-"));
+    }
+
+}

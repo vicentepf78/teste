@@ -1,0 +1,28 @@
+package br.com.home.estudos;
+
+import java.util.Scanner;
+
+public class Solution02 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+//		int i = scan.nextInt();
+//		Double d = scan.nextDouble();
+		String s = scan.next();
+		
+		while (scan.hasNext()) {
+			s = s.concat(s);
+			scan.next();
+		}
+		
+		scan.close();
+
+		// Write your code here.
+
+		System.out.println("String: " + s);
+//		System.out.println("Double: " + d);
+//		System.out.println("Int: " + i);
+	}
+
+}

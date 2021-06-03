@@ -1,0 +1,53 @@
+package br.com.home.estudos.hackerrank;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class Solution05 {
+
+	public static void main(String[] argh) {
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
+		
+		if(t >= 0 && t <= 500) {
+			for (int i = 0; i < t; i++) {
+				int a = in.nextInt();
+				int b = in.nextInt();
+				int n = in.nextInt();
+				
+				if(n >= 1 && n <= 15) {
+					if( a >= 0 && a <= 50 &&
+							b >= 0 && b <= 50) {
+						somar(a, b, n);	
+					} 
+				} 
+			}
+		}
+		
+		in.close();
+	}
+	
+	private static void somar(int a, int b, int n) {
+		int soma = 0;
+		int x = 1;
+		int array[] = new int[n];
+		
+		for (int i = 0; i < n; i++) {
+			
+			if(soma == 0) {
+				soma += a + (x * b);
+			} else {
+			 soma += (x * b);	
+			}
+			array[i] = soma;
+			x = x + x;	
+		}
+		
+		List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
+		list.forEach(r ->  System.out.print(r + " "));
+		System.out.println();
+	}
+
+}

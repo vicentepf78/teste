@@ -1,0 +1,11 @@
+package br.com.home.estudos;
+
+public class MathUtils {
+    public static double average(int a, int b) {
+        return new Double((a + b) / 2).doubleValue();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(average(2,1));
+    }
+}

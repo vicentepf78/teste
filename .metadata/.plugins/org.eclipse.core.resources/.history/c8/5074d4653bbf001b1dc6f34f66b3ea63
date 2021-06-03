@@ -1,0 +1,13 @@
+package br.com.home.estudos;
+
+import java.math.BigDecimal;
+
+public class MathUtils {
+    public static double average(int a, int b) {
+        return new BigDecimal(((a + b) / 2)).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(average(2,1));
+    }
+}

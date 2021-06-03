@@ -1,0 +1,68 @@
+package br.com.home.estudos.hackerrank;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution10 {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+		int month = Integer.parseInt(firstMultipleInput[0]);
+
+		int day = Integer.parseInt(firstMultipleInput[1]);
+
+		int year = Integer.parseInt(firstMultipleInput[2]);
+
+		String res = Result.findDay(month, day, year);
+
+		bufferedWriter.write(res);
+		bufferedWriter.newLine();
+
+		bufferedReader.close();
+		bufferedWriter.close();
+	}
+
+}
+
+class Result {
+
+	/*
+	 * Complete the 'findDay' function below.
+	 *
+	 * The function is expected to return a STRING. The function accepts following
+	 * parameters: 1. INTEGER month 2. INTEGER day 3. INTEGER year
+	 */
+
+	public static String findDay(int month, int day, int year) {
+		GregorianCalendar calendar = new GregorianCalendar(year, month-1, day);
+//		Calendar.getInstance().set(Calendar.YEAR, year);
+//		Calendar.getInstance().set(Calendar.MONTH, month-1);
+//		Calendar.getInstance().set(Calendar.DAY_OF_MONTH, day);
+		
+		Map<Integer, String> diasDaSemana = new HashMap<Integer, String>();
+		diasDaSemana.put(Calendar.SUNDAY, "SUNDAY");
+		diasDaSemana.put(Calendar.MONDAY, "MONDAY");
+		diasDaSemana.put(Calendar.TUESDAY, "TUESDAY");
+		diasDaSemana.put(Calendar.WEDNESDAY, "WEDNESDAY");
+		diasDaSemana.put(Calendar.THURSDAY, "THURSDAY");
+		diasDaSemana.put(Calendar.FRIDAY, "FRIDAY"); 
+		diasDaSemana.put(Calendar.SATURDAY, "SATURDAY");
+		
+		System.out.println("Calendar : " + calendar.get(Calendar.DAY_OF_WEEK));
+		
+		return diasDaSemana.get(calendar.get(Calendar.DAY_OF_WEEK));
+	}
+
+}
